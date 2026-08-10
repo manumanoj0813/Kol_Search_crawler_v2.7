@@ -23,13 +23,14 @@
             "type": "string",
             "editor": "textfield",
             "default": "Input",
-            "description": "Columns: A = KOL_ID, B = KOL_Name, C = Suffix (roster credentials, e.g. \"MD, FAAN\" \u2014 powers suffix-match/conflict in the identity gate), D = Affiliation (optional; triggers anchored precision mode), E = Specialty (optional; feeds the identity gate)."
+            "description": "Columns: A = KOL_ID, B = KOL_Name, C = Suffix (roster credentials, e.g. \"MD, FAAN\" — powers suffix-match/conflict in the identity gate), D = Affiliation (optional; triggers anchored precision mode), E = Specialty (optional; feeds the identity gate)."
         },
         "outputSheet": {
             "title": "Output sheet name",
             "type": "string",
             "editor": "textfield",
-            "default": "Output"
+            "default": "Output",
+            "description": "Name of the Google Sheet tab where crawler results will be written."
         },
         "serviceAccountJson": {
             "title": "Google service-account JSON (secret)",
@@ -41,6 +42,7 @@
         "resultsPerQuery": {
             "title": "Results per query",
             "type": "integer",
+            "description": "Maximum number of Google search results to collect for each search query.",
             "default": 10,
             "minimum": 1,
             "maximum": 100
@@ -48,6 +50,7 @@
         "pageConcurrency": {
             "title": "Page crawl concurrency",
             "type": "integer",
+            "description": "Number of article pages that can be crawled concurrently.",
             "default": 10,
             "minimum": 1,
             "maximum": 25
@@ -84,14 +87,18 @@
             "title": "Include social-platform results",
             "type": "boolean",
             "default": true,
-            "description": "When false, Facebook/Instagram/X/LinkedIn/YouTube/TikTok results are dropped from the output. Live testing showed social floods name queries with wrong-person posts (74% of rows in the pilot run); turn off for press-article deliverables."
+            "description": "When false, Facebook/Instagram/X/LinkedIn/YouTube/TikTok results are dropped from the output. Live testing showed social floods name queries with wrong-person posts; turn off for press-article deliverables."
         },
         "identityGate": {
             "title": "Identity gate",
             "type": "string",
             "editor": "select",
             "default": "tag",
-            "enum": ["tag", "drop", "off"],
+            "enum": [
+                "tag",
+                "drop",
+                "off"
+            ],
             "enumTitles": [
                 "Tag rows VALID / REVIEW (recommended first)",
                 "Drop REVIEW rows (only VALID reach Output)",
@@ -110,7 +117,8 @@
             "type": "string",
             "editor": "textfield",
             "default": "scraperlink/google-search-results-serp-scraper",
-            "sectionCaption": "Advanced"
+            "sectionCaption": "Advanced",
+            "description": "Apify Actor used to retrieve Google search engine results."
         },
         "serpConcurrency": {
             "title": "SERP concurrency",
