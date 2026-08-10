@@ -1,0 +1,9 @@
+.DS_Store
+.idea
+.vscode
+.zed
+node_modules
+storage
+.env
+src/google-service-account.json
+**/*service-account*.json

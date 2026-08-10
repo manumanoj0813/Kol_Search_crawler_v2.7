@@ -1,0 +1,16 @@
+{
+    "$schema": "https://apify.com/schemas/v1/actor.ide.json",
+    "actorSpecification": 1,
+    "name": "kol-search-crawler",
+    "title": "KOL Search Crawler",
+    "description": "Reads KOLs from a Google Sheet, runs clustered Google queries via a SERP actor, crawls result pages for publish dates, filters to a recency window, and writes results back to the sheet with a staging-promote safety model.",
+    "version": "0.1",
+    "buildTag": "latest",
+    "usesStandbyMode": false,
+    "input": "./input_schema.json",
+    "meta": {
+        "templateId": "js-standby",
+        "generatedBy": "Claude (claude.ai)"
+    },
+    "dockerfile": "../Dockerfile"
+}

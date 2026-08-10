@@ -1,0 +1,35 @@
+{
+    "name": "kol-search-crawler",
+    "version": "0.1.0",
+    "type": "module",
+    "description": "KOL press monitoring: Google Sheet in, clustered SERP queries, page-date verification, recency filter, Google Sheet + Excel out.",
+    "engines": {
+        "node": ">=20.0.0"
+    },
+    "dependencies": {
+        "apify": "^3.7.0",
+        "axios": "^1.19.0",
+        "cheerio": "^1.2.0",
+        "dayjs": "^1.11.21",
+        "googleapis": "^150.0.0",
+        "https-proxy-agent": "^7.0.6",
+        "xlsx": "^0.18.5"
+    },
+    "devDependencies": {
+        "@apify/eslint-config": "^2.0.0",
+        "eslint": "^9.29.0",
+        "eslint-config-prettier": "^10.1.5",
+        "prettier": "^3.9.6",
+        "vitest": "^4.1.10"
+    },
+    "scripts": {
+        "start": "node ./src/main.js",
+        "format": "prettier --write .",
+        "format:check": "prettier --check .",
+        "lint": "eslint",
+        "lint:fix": "eslint --fix",
+        "test": "vitest run"
+    },
+    "author": "Knovatics",
+    "license": "ISC"
+}
